@@ -1,0 +1,185 @@
+div, p, form, input, a, span, button{
+    box-sizing: border-box !important;
+    text-decoration: none !important;
+}
+ul, li, p{
+    padding: 0 !important;
+    margin: 0 !important;
+    text-decoration: none !important;
+}
+
+a, a:hover,a:active{
+    text-decoration: none !important;
+}
+a{
+    transition: all 0.2s ease !important;
+}
+button{
+    transition: all 0.5s ease !important;
+}
+.button{
+    width: 150px;
+    justify-content: center;
+    background-color: #d9b97e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 3px;
+    font-size: 15px;
+    box-shadow: 0px 0px 250px 5px #bebebe;
+    text-align: center;
+}
+.button:hover{
+    background: #d9b97e !important;
+    box-shadow: none;
+}
+.button:active{
+    background: #d9b97e !important;
+    box-shadow: inset 0px 0px 3px 2px #9d9d9d;
+}
+/* -----------------HEADER----------------- */
+.header{
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal
+}
+.navbar-brand{
+    border: none !important;
+}
+.header__btn:hover{
+    box-shadow: 0px 0px 8px 2px #c9c9c9;
+    background: #d9b97e;
+    border-radius: 15px;
+    margin: 0px 5px;
+    transition: all 0.2s ease !important;
+}
+.header__btn_kontakt{
+    width: 100%;
+    padding: 8px 15px;
+    color: #fff !important;
+}
+.header__backgrount{
+    background: url(../img/image.png) no-repeat center top ;
+    background-size: cover;
+    box-shadow: inset 0px 0px 210px 50px #000000;
+    box-sizing: border-box;
+    /* height: 600px; */
+    padding-bottom: 80px;
+}
+.header__mainTitel{
+    font-size: 45px;
+    margin-top: 230px;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 5px 5px 10px #000000;
+}
+.header__subTitel{
+    margin-top: 20px;
+    font-size: 35px;
+    color: #fff;
+    max-width: 700px;
+    text-align: center;
+    text-shadow: 5px 5px 10px #000000;
+}
+.header__messengeButton{
+    margin-top: 20px;
+    margin-bottom: 90px;
+}
+/* -------------Skills------------------- */
+.skills{
+    padding: 70px 0;
+}
+.skills__secondTitel{
+    text-align: center;
+    margin-bottom: 35px;
+}
+.skills__block{
+    margin-bottom: 35px;
+}
+.skills__img{
+    min-width: 100px;
+    min-height: 100px;
+}
+.skills__titel{
+    font-size: 23px;
+}
+.skills__img svg, .skills__img i{
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem;
+}
+/* ---------------info------------- */
+.info{
+    margin-bottom: 75px;
+}
+.info__block{
+    padding: 20px;
+    margin: 0px 15px ;
+}
+.info__text{
+    font-size: 15px;
+}
+.info__block_shadow{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0px 0px 10px 3px #c9c9c9;
+}
+.info__text_bold{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* --------------CAROUSEL----------------- */
+.carousel{
+    margin-bottom: 25px;
+}
+.carousel__titel{
+    margin-bottom: 25px;
+}
+.carousel img{
+    object-fit: cover !important;
+    height: 90vh;
+    border-radius: 15px;
+}
+/* -------------Form---------------------- */
+.form{
+    margin-bottom: 50px;
+}
+.form__box{
+    padding: 50px 50px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 10px #cac7c7;
+    /* #f2e3b3 */
+}
+.form__btn{
+    width: 100%;
+    background: #d9b97e;
+    border: none;
+    box-shadow: 0px 0px 9px 1px #bbbbbb;
+}
+.form__btn:hover{
+    background: #d9b97e !important;
+    box-shadow: none;
+}
+.form__btn:active{
+    background: #d9b97e !important;
+    box-shadow: inset 0px 0px 3px 2px #9d9d9d;
+}
+/* ------------footer------------------ */
+.footer{
+    padding: 25px 0;
+    background-color: #e5e5e5;
+}
+.footer__text a{
+    color: #000000;
+}
+.footer__item{
+    margin-bottom: 8px;
+}
+.footer__item i{
+    margin-right: 15px;
+}
+
