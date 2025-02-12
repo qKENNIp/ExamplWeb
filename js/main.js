@@ -48,8 +48,8 @@ document.getElementById('formSubmit').addEventListener('submit', async function 
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const zoomableImage = document.querySelectorAll("#zoomable-image");
-    const zoomableImageOnScean = document.querySelectorAll("#zoomable-image-on-scean");
+    const zoomableImage = document.getElementById("zoomable-image");
+    const zoomableImageOnScean = document.getElementById("zoomable-image-on-scean");
 
     function toggleZoom() {
         zoomableImageOnScean.classList.toggle("zoomed");
@@ -61,9 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 500);
         }
     }
+    zoomableImage.addEventListener("click", toggleZoom);
+    zoomableImageOnScean.addEventListener("click", toggleZoom);
     for (let i = 0; i < zoomableImage.length; i++) {
-        zoomableImage[i].addEventListener('click', toggleZoom);
-        zoomableImageOnScean[i].addEventListener("click", toggleZoom);
+        z
     }
 });
 
