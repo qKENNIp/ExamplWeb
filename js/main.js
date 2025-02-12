@@ -1,8 +1,6 @@
 (() => {
-  
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll('.needs-validation')
-
   // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
@@ -10,7 +8,6 @@
         event.preventDefault()
         event.stopPropagation()
       }
-
       form.classList.add('was-validated')
     }, false)
   })
@@ -49,4 +46,25 @@ document.getElementById('formSubmit').addEventListener('submit', async function 
         console.error("Ошибка сети:", error);
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const zoomableImage = document.querySelectorAll("#zoomable-image");
+    const zoomableImageOnScean = document.querySelectorAll("#zoomable-image-on-scean");
+
+    function toggleZoom() {
+        zoomableImageOnScean.classList.toggle("zoomed");
+        if (zoomableImageOnScean.classList.contains("zoomed")) {
+            zoomableImageOnScean.style.display = "block"; // show element
+        } else {
+            setTimeout(() => {
+                zoomableImageOnScean.style.display = "none"; // hide element
+            }, 500);
+        }
+    }
+    for (let i = 0; i < zoomableImage.length; i++) {
+        zoomableImage[i].addEventListener('click', toggleZoom);
+        zoomableImageOnScean[i].addEventListener("click", toggleZoom);
+    }
+});
+
 
