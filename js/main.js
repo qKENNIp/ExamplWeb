@@ -1,49 +1,93 @@
-(() => {
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
-  // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
+document.getElementById('formSubmit').addEventListener('submit', function(event) {
+    event.preventDefault(); // Останавливаем стандартное отправление формы
 
-document.getElementById('formSubmit').addEventListener('submit', async function (event) {
-    // Stop the default form submission behavior
-     event.preventDefault();
-    // Collecting data from the form
-    const formData = {
-        name: document.getElementById("name").value,
-        surname: document.getElementById("surname").value,
-        email: document.getElementById("exampleInputEmail1").value,
-        phone: document.getElementById("exampleInputTel").value,
-        consent: document.getElementById("exampleCheck1").checked
-    };
+    var form = event.target;
+    var phoneInput = document.getElementById('exampleInputTel');
+    var phoneNumber = phoneInput.value.trim();
 
-    try {
-        // Sending data to the server
-        const response = await fetch("http://localhost:8090/demo_war_exploded/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-        });
+    // Регулярное выражение для проверки польского номера телефона (только 9 цифр)
+    var phoneRegex = /^\d{9}$/;
 
-        // Server response processing
-        if (response.ok) {
-            const result = await response.json();
-            console.log("Ответ сервера:", result);
-        } else {
-            console.error("Ошибка сервера:", response.status, response.statusText);
-        }
-    } catch (error) {
-        console.error("Ошибка сети:", error);
+    // Проверяем, если телефон соответствует формату
+    if (!phoneRegex.test(phoneNumber)) {
+        phoneInput.setCustomValidity("Пожалуйста, введите корректный номер телефона (9 цифр).");
+    } else {
+        phoneInput.setCustomValidity(""); // Снимаем ошибку, если номер правильный
     }
-});
+
+    // Если форма прошла валидацию
+    if (form.checkValidity()) {
+        // Создаем объект с данными для отправки на сервер
+        var formData = {
+            name: document.getElementById('name').value,
+            surname: document.getElementById('surname').value,
+            email: document.getElementById('exampleInputEmail1').value,
+            phone: document.getElementById('exampleInputTel').value,
+            consent: document.getElementById('exampleCheck1').checked ? "true" : "false"
+        };
+
+        // Отправляем данные на сервер с использованием fetch
+        fetch('http://localhost:8080/Nava__bud/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+            .then(response => response.json()) // Преобразуем ответ в JSON
+            .then(data => {
+                // Если сервер вернул успешный ответ
+                if (data.success) {
+                    var modal = new bootstrap.Modal(document.getElementById('exampleModal1'));
+                    modal.show();
+                } else {
+                    // Обработка ошибок от сервера
+                    alert('Произошла ошибка при отправке данных: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка при отправке данных. Попробуйте позже.');
+            });
+    } else {
+        form.classList.add('was-validated');
+    }
+}, false);
+
+
+
+
+// document.getElementById('formSubmit').addEventListener('submit', async function (event) {
+//     // Stop the default form submission behavior
+//      event.preventDefault();
+//     // Collecting data from the form
+//     const formData = {
+//         name: document.getElementById("name").value,
+//         surname: document.getElementById("surname").value,
+//         email: document.getElementById("exampleInputEmail1").value,
+//         phone: document.getElementById("exampleInputTel").value,
+//         consent: document.getElementById("exampleCheck1").checked
+//     };
+//
+//     try {
+//         // Sending data to the server
+//         const response = await fetch("http://localhost:8080/Nava__bud/submit/", {
+//             method: "POST",
+//             headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify(formData)
+//         });
+//
+//         // Server response processing
+//         if (response.ok) {
+//             const result = await response.json();
+//             console.log("Ответ сервера:", result);
+//         } else {
+//             console.error("Ошибка сервера:", response.status, response.statusText);
+//         }
+//     } catch (error) {
+//         console.error("Ошибка сети:", error);
+//     }
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
     // Get all elements with the class "zoomable-image"
