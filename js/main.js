@@ -10,7 +10,7 @@ document.getElementById('formSubmit').addEventListener('submit', function(event)
 
     // Проверяем, если телефон соответствует формату
     if (!phoneRegex.test(phoneNumber)) {
-        phoneInput.setCustomValidity("Пожалуйста, введите корректный номер телефона (9 цифр).");
+        phoneInput.setCustomValidity("Wprowadź poprawny numer telefonu (9 cyfr).");
     } else {
         phoneInput.setCustomValidity(""); // Снимаем ошибку, если номер правильный
     }
@@ -42,12 +42,12 @@ document.getElementById('formSubmit').addEventListener('submit', function(event)
                     modal.show();
                 } else {
                     // Обработка ошибок от сервера
-                    alert('Произошла ошибка при отправке данных: ' + data.message);
+                    alert('Wystąpił błąd podczas wysyłania danych: ' + data.message);
                 }
             })
             .catch(error => {
                 console.error('Ошибка:', error);
-                alert('Ошибка при отправке данных. Попробуйте позже.');
+                alert('Błąd podczas wysyłania danych. Spróbuj ponownie później.');
             });
     } else {
         form.classList.add('was-validated');
