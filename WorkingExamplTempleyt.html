@@ -3,67 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css_bootstrap/css/bootstrap.min.css">
+    <!------------- css ----------------->
+    <link rel="stylesheet" href="css/main.css">
+    <!------------ favicon ----------->
+    <link rel="icon" href="img/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/logo.jpg" type="image/x-icon">
+    <!------------- fonts --------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="row Work__Exampl">
-  <div class="card col-lg-3 col-md-6 col-sm-12">
-    <img src="img/bath.JPG" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Łażienka</h5>
-      <p class="card-text">Zrealozowalivaliśmy projek w ktorym zrobiliśmy ...</p>
-      <button type="button" class="Work__Exampl_btn button  btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Wiecej informacji
-      </button>
-    </div>
-  </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Łażienka</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+<header class="header bg-body-tertiary" id="header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiarбy">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Na.Va.Bud</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link header__btn" aria-current="page" href="index.html">Nasze usługi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__btn" href="index.html">Jak działamy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__btn" href="#">Przyklady prac</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header__btn" href="index.html">Skontaktować się z nami</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+              <a class="nav-link active button header__btn_kontakt" aria-current="page" href="#footer">
+                  Gdzie można zkontaktować się
+              </a>
+          </span>
+        </div>
       </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-3 zoomable-image" data-target="zoomable-image-on-scean1">
-            <img src="img/bath.JPG" class="img-fluid" alt="...">
+    </nav>
+  </div>
+</header>
+<section class="carousel">
+  <div class="container">
+    <div class="row text-center">
+      <h3 class="carousel__titel">
+        Przykłady prac
+      </h3>
+    </div>
+    <div class="row Work__Exampl">
+      <div class="card col-lg-3 col-md-6 col-sm-12">
+        <img src="img/bath.JPG" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Łażienka</h5>
+          <p class="card-text">Zrealozowalivaliśmy projek w ktorym zrobiliśmy ...</p>
+          <button type="button" class="Work__Exampl_btn button  btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Wiecej informacji
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-------------- Modal ------------->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Łażienka</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="col-3 zoomable-image-on-scean" id="zoomable-image-on-scean1">
-            <img src="img/bath.JPG" class="img-fluid" alt="...">
-          </div>
+          <div class="modal-body">
+            <div class="row">
+              <!--                                IMG OF WORK---------->
+              <div class="col-3 zoomable-image" data-target="zoomable-image-on-scean-1">
+                <img src="img/bath.JPG" class="img-fluid" alt="...">
+              </div>
+              <div class="col-3 zoomable-image-on-scean" id="zoomable-image-on-scean-1">
+                <img src="img/bath.JPG" class="img-fluid" alt="...">
+              </div>
 
-          <div class="col-3 zoomable-image" data-target="zoomable-image-on-scean2">
-            <img src="img/bath.JPG" class="img-fluid" alt="...">
-          </div>
-          <div class="col-3 zoomable-image-on-scean" id="zoomable-image-on-scean2">
-            <img src="img/bath.JPG" class="img-fluid" alt="...">
-          </div>
+              <div class="col-3 zoomable-image" data-target="zoomable-image-on-scean-2">
+                <img src="img/bath.JPG" class="img-fluid" alt="...">
+              </div>
+              <div class="col-3 zoomable-image-on-scean" id="zoomable-image-on-scean-2">
+                <img src="img/bath.JPG" class="img-fluid" alt="...">
+              </div>
 
-          <div class="col-3 zoomable-image" data-target="zoomable-image-on-scean3">
-            <img src="img/bath.JPG" class="img-fluid" alt="...">
-          </div>
-          <div class="col-3 zoomable-image-on-scean" id="zoomable-image-on-scean3">
-            <img src="img/bath.JPG" class="img-fluid" alt="...">
-          </div>
-
-
-          <div class="row">
-            <div class="col-12 modal-body-text">
-              <p>
-                Tu przykladowy tekst o wykonywanej prace
-              </p>
+              <div class="col-3 zoomable-image" data-target="zoomable-image-on-scean-3">
+                <img src="img/bath.JPG" class="img-fluid" alt="...">
+              </div>
+              <div class="col-3 zoomable-image-on-scean" id="zoomable-image-on-scean-3">
+                <img src="img/bath.JPG" class="img-fluid" alt="...">
+              </div>
+              <!--                                DESCRIPTION -------->
+              <div class="row">
+                <div class="col-12 modal-body-text">
+                  <p>
+                    Tu przykladowy tekst o wykonywanej prace
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="button btn btn-secondary" data-bs-dismiss="modal">Zamknąć</button>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="button btn btn-secondary" data-bs-dismiss="modal">Zamknąć</button>
-      </div>
     </div>
   </div>
-</div>
-
+</section>
 </body>
 </html>
+<script src="js/bootstrapJS/bootstrap.js"></script>
+<script src="js/zoomScript.js"></script>
